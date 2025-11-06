@@ -1,0 +1,219 @@
+/* ---------- BASE ---------- */
+:root{
+  --bg:#f9fbff;
+  --card:#ffffff;
+  --muted:#64748b;
+  --text:#0f172a;
+  --accent:#3b82f6;   /* primary blue */
+  --accent-2:#34d399; /* green */
+  --glass: rgba(255,255,255,0.75);
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+/* Loader (short fade) */
+.loader{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#fff,#f1f7ff);
+  z-index:9999;
+  display:block;
+  opacity:1;
+  transition:opacity .7s ease, visibility .7s;
+}
+.loader.loaded{opacity:0;pointer-events:none;visibility:hidden}
+
+/* NAV / logo */
+.nav{
+  position:sticky;top:0;z-index:40;background:transparent;padding:16px 20px;display:flex;justify-content:center;
+}
+.nav-inner{width:100%;max-width:1100px;display:flex;align-items:center;justify-content:flex-start}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-svg{filter:drop-shadow(0 6px 18px rgba(59,130,246,0.12));transform-origin:center;animation:logoPop .9s cubic-bezier(.2,.9,.3,1)}
+.brand-text .title{font-weight:600;font-size:18px}
+.brand-text .subtitle{font-weight:300;font-size:12px;color:var(--muted)}
+.nav.small{
+  position:sticky;
+  top:0;
+  z-index:100;
+  padding:10px 16px;
+  justify-content:flex-start;
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(15,23,42,0.05);
+  transition:background .3s ease, box-shadow .3s ease;
+}
+.nav.small.scrolled{
+  background:#fff;
+  box-shadow:0 4px 18px rgba(15,23,42,0.08);
+}
+
+.brand-text.small .title{font-size:15px}
+
+/* Logo animation */
+@keyframes logoPop{
+  0%{transform:translateY(-6px) scale(.95);opacity:0}
+  60%{transform:translateY(6px) scale(1.04);opacity:1}
+  100%{transform:translateY(0) scale(1)}
+}
+
+/* BACK button (top-left on subpages) */
+.back{
+  position:fixed;left:18px;top:18px;z-index:60;background:rgba(255,255,255,0.95);border-radius:10px;padding:10px 12px;color:var(--accent);text-decoration:none;box-shadow:0 6px 18px rgba(12,18,36,0.06);
+  transition:transform .18s ease, box-shadow .18s;
+}
+.back:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(59,130,246,0.14)}
+.back i{font-size:16px}
+
+/* MAIN LAYOUT */
+.main{display:flex;flex-direction:column;align-items:center;padding:28px 16px 60px}
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* enables smooth animation */
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-20px) scale(1.05); /* lifts and slightly enlarges the card */
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2); /* stronger shadow on hover */
+}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:26px;align-items:center;margin:10px 0 30px}
+@media (max-width:950px){.hero{grid-template-columns:1fr;}.hero-right{order:2}}
+.hero-left h1{font-size:28px;margin:8px 0 12px;color:var(--text)}
+.lead{color:var(--muted);line-height:1.5}
+
+/* banner wrap center-limited */
+.banner-wrap{display:flex;align-items:center;justify-content:center}
+.banner{width:100%;max-width:760px;border-radius:12px;object-fit:cover;box-shadow:0 12px 30px rgba(2,6,23,0.06)}
+
+/* CTA / buttons */
+.cta-row{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600;transition:transform .18s ease,box-shadow .18s;background:var(--card);border:1px solid rgba(15,23,42,0.06)}
+.btn i.ml{opacity:0.9}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 10px 30px rgba(59,130,246,0.12)}
+.btn.primary:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(59,130,246,0.18)}
+.btn.outline{border:1px solid rgba(59,130,246,0.2);color:var(--accent)}
+.btn.ghost{background:transparent;color:var(--accent);border:1px dashed rgba(59,130,246,0.12)}
+
+/* PAGE layout for subpages */
+.page{width:100%;max-width:1100px;padding-top:18px}
+.center-card{display:flex;justify-content:center;align-items:center;padding:18px;margin-bottom:20px}
+.banner-card .banner{max-width:760px}
+
+/* CARDS GRID */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1100px;margin:10px auto}
+@media (max-width:1000px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cards-grid{grid-template-columns:1fr;padding:0 12px}}
+
+/* INFO CARD */
+.info-card{background:linear-gradient(180deg, #fff, #fbfdff);padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(12,18,36,0.05);border:1px solid rgba(15,23,42,0.03);transform:translateY(8px);opacity:0;animation:cardIn .6s forwards;animation-delay:calc(var(--i) * 0.08)}
+.info-card .icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;margin-bottom:12px}
+.info-card h3{margin:6px 0 8px}
+.info-card p{color:var(--muted);font-size:14px;line-height:1.45}
+
+/* staggered reveal via inline style --i variable will be set in markup */
+@keyframes cardIn{
+  to{transform:none;opacity:1}
+}
+
+/* Hover effect */
+.info-card:hover{ transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 48px rgba(12,18,36,0.08);}
+
+/* Footer */
+.footer{max-width:1100px;margin:24px auto;text-align:center;color:var(--muted);padding:12px}
+
+/* small helpers */
+.title{font-weight:600}
+.subtitle{font-weight:300;color:var(--muted)}
+
+/* fade-in body class (applied after loader) */
+body.loaded-body .card,.loaded-body .info-card{transform:none;opacity:1;transition:all .45s ease}
+
+/* small screens adjustments */
+@media (max-width:480px){
+  .nav-inner{padding:0 8px}
+  .hero-left h1{font-size:20px}
+  .brand-text .title{font-size:16px}
+  .cta-row{justify-content:center}
+}
+
+/* utility: set animation index by adding style="--i:0" etc to each card in HTML */
+
+/* ---------- BACK TO HOME ICON ---------- */
+.back {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  z-index: 200; /* raised above nav */
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--accent);
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(12, 18, 36, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.3s ease;
+}
+
+.back:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.18);
+  background: #fff;
+}
+
+.back i {
+  font-size: 16px;
+}
+
+/* ---------- SUBPAGE TOOLBAR ---------- */
+.sub-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+  z-index: 200;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+}
+
+.sub-nav .back {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 8px;
+  color: var(--accent);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transition: all 0.2s ease;
+}
+.sub-nav .back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(59,130,246,0.12);
+}
+
+.sub-nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.sub-nav .brand-text .title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+}
