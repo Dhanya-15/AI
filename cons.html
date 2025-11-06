@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cons — AI in Education</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+
+  <header class="sub-nav">
+  <a class="back" href="index.html" title="Back to Home">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
+  <div class="brand">
+    <svg class="logo-svg" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1b"><stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#34D399"/></linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="26" stroke="url(#g1b)" stroke-width="2" opacity="0.12"></circle>
+      <path d="M22 44 L32 18 L42 44" stroke="url(#g1b)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <div class="brand-text small">
+      <div class="title">AI in Education Blog</div>
+    </div>
+  </div>
+</header>
+
+  <main class="main page">
+    <section class="banner-card card center-card">
+      <img class="banner" src="con.jpg" alt="Cons banner">
+    </section>
+
+    <section class="cards-grid">
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-user-slash"></i></div>
+        <h3>Reduced Human Interaction</h3>
+        <p>Heavy tech use can weaken interpersonal learning moments and mentor relationships.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Privacy Risks</h3>
+        <p>Large-scale student data collection creates potential for misuse and profiling without safeguards.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-signal"></i></div>
+        <h3>Access Inequality</h3>
+        <p>Not all learners have devices or reliable connectivity; inequality can widen if unaddressed.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
+        <h3>Algorithmic Bias</h3>
+        <p>Poorly trained models may reinforce existing biases and unfairly affect some students.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>Over-reliance on Technology</h3>
+        <p>Students might become dependent on AI tools, reducing critical thinking and problem-solving skills.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+        <h3>High Implementation Costs</h3>
+        <p>Integrating AI in education requires investment in software, hardware, and training, which may be a barrier for some institutions.</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').classList.add('loaded');
+      setTimeout(()=>document.body.classList.add('loaded-body'), 250);
+    });
+  </script>
+</body>
+</html>

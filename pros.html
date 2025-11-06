@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pros — AI in Education</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+
+  <header class="sub-nav">
+  <a class="back" href="index.html" title="Back to Home">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
+  <div class="brand">
+    <svg class="logo-svg" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1b"><stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#34D399"/></linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="26" stroke="url(#g1b)" stroke-width="2" opacity="0.12"></circle>
+      <path d="M22 44 L32 18 L42 44" stroke="url(#g1b)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <div class="brand-text small">
+      <div class="title">AI in Education Blog</div>
+    </div>
+  </div>
+</header>
+
+  <main class="main page">
+    <section class="banner-card card center-card">
+      <img class="banner" src="pro.jpg" alt="Pros banner">
+    </section>
+
+    <section class="cards-grid">
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <h3>Personalized Learning</h3>
+        <p>Adaptive systems tailor lessons to individual pace and style, improving retention and engagement.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+        <h3>Instant Feedback</h3>
+        <p>Automated assessments provide immediate, actionable feedback that accelerates learning cycles.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-globe"></i></div>
+        <h3>Expanded Access</h3>
+        <p>Remote platforms and AI tutors make quality resources available across geographies and schedules.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
+        <h3>Teacher Support</h3>
+        <p>Analytics and automation reduce admin burden and free instructors to focus on pedagogy.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Data-Driven Insights</h3>
+        <p>AI analytics identify learning trends and help educators refine teaching strategies for better outcomes.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="icon"><i class="fa-solid fa-universal-access"></i></div>
+        <h3>Inclusivity & Accessibility</h3>
+        <p>Tools like speech recognition, translation, and adaptive content make education more accessible to diverse learners.</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('loader').classList.add('loaded');
+      setTimeout(()=>document.body.classList.add('loaded-body'), 250);
+    });
+
+  </script>
+</body>
+</html>
